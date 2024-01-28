@@ -10,22 +10,21 @@ ffmpeg -i %1 -map 0:0 -c:v libx264 -crf 23 -pix_fmt yuv420p -vf scale=1920:1080 
 <br/><br/>
 ffmpeg -i %1 -map 0 -c:v libx264 -crf 22 -c:a copy %~n1y.mkv
 
-shutdown -s -t 30
 <br/>
 <br/>
 <br/>
 #divide<br/>
-ffmpeg -i chi.mp4 -acodec copy -f segment -segment_time 30 -vcodec copy -map 0 stream%%05d.mp4
+ ffmpeg -i chi.mp4 -acodec copy -f segment -segment_time 30 -vcodec copy -map 0 stream%%05d.mp4
 <br/><br/>
-* ffmpeg -i a.mkv -map 0 -acodec copy -vcodec copy -ss 0 -t 1920.05 1.mkv
+ ffmpeg -i a.mkv -map 0 -acodec copy -vcodec copy -ss 0 -t 1920.05 1.mkv
 <br/><br/>
-* ffmpeg -i a.mkv -map 0:0 -map 0:1 -map 0:2 -acodec copy -vcodec copy -ss 1920 -t 1920.05 2.mkv
+ ffmpeg -i a.mkv -map 0:0 -map 0:1 -map 0:2 -acodec copy -vcodec copy -ss 1920 -t 1920.05 2.mkv
 <br/><br/>
-* ffmpeg -i a.mkv -map 0:0 -map 0:1 -map 0:2 -acodec copy -vcodec copy -ss 3800 -t 1920.05 3.mkv
+ ffmpeg -i a.mkv -map 0:0 -map 0:1 -map 0:2 -acodec copy -vcodec copy -ss 3800 -t 1920.05 3.mkv
 <br/><br/>
-* ffmpeg -i a.mkv -map 0 -acodec copy -vcodec copy -ss 0 -t 1920.05 1.mkv
+ ffmpeg -i a.mkv -map 0 -acodec copy -vcodec copy -ss 0 -t 1920.05 1.mkv
 
-* ffmpeg -i a.mkv -map 0:0 -map 0:1 -map 0:2 -acodec copy -vcodec copy -ss 1920 -t 1920.05 2.mkv
+ ffmpeg -i a.mkv -map 0:0 -map 0:1 -map 0:2 -acodec copy -vcodec copy -ss 1920 -t 1920.05 2.mkv
 
  ffmpeg -i a.mkv -map 0:0 -map 0:1 -map 0:2 -acodec copy -vcodec copy -ss 3800 -t 1920.05 3.mkv
 <br/><br/>
@@ -39,3 +38,7 @@ Resolution
 <br/>
 ffmpeg -i a.mp4 -vf scale=640:360 -acodec copy b.mp4
 <br/>
+<br/>
+#Audio MP3
+<br/><br/>
+ffmpeg -i d.mkv -vn -ar 44100 -ac 2 -b:a 320k  d22.mp3
