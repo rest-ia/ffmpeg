@@ -20,11 +20,13 @@ ffmpeg -i chi.mp4 -acodec copy -f segment -segment_time 30 -vcodec copy -map 0 s
 
 * ffmpeg -i a.mkv -map 0:0 -map 0:1 -map 0:2 -acodec copy -vcodec copy -ss 1920 -t 1920.05 2.mkv
 
-* ffmpeg -i a.mkv -map 0:0 -map 0:1 -map 0:2 -acodec copy -vcodec copy -ss 3800 -t 1920.05 3.mkv
+ ffmpeg -i a.mkv -map 0:0 -map 0:1 -map 0:2 -acodec copy -vcodec copy -ss 3800 -t 1920.05 3.mkv
 <br/><br/>
 Join
 <br/>
 ffmpeg -f concat -i videos.txt -c copy output.mp4
+<br/><br/>
+ffmpeg -i 1.mp4 -i 2.mp4 -i 3.mp4 -filter_complex "[0:v:0][0:a:0][1:v:0][1:a:0][2:v:0][2:a:0]concat=n=3:v=1:a=1[outv][outa]" output.mkv
 <br/><br/>
 Resolution
 <br/>
