@@ -1,3 +1,6 @@
+#sharpen
+ffmpeg -i /content/sp.mp4 -filter:v unsharp=5:5:1.0:5:5:0.0 -progress pipe:1 spb.mp4 -y
+
 #fps<br/>
 ffmpeg -i video.mp4 -filter:v "setpts=PTS/1.5" -progress pipe:1 -stats -c:a copy out.mp4 -y
 <br/>
