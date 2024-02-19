@@ -1,0 +1,16 @@
+Este codigo funciona en Kiwi Browser en Android
+
+function ClickConnect() {
+var iconElement = document.getElementById("toggle-header-button");
+if (iconElement) {
+var clickEvent = new MouseEvent ("click", {
+bubbles: true, cancelable: true,
+view: window
+});
+iconElement.dispatchEvent (clickEvent);
+}
+}
+setInterval(ClickConnect, 6000);
+
+Fuente:
+https://www.youtube.com/watch?v=Vqd_Gw20B2E
