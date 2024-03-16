@@ -1,3 +1,5 @@
+!ffmpeg -framerate 30 -i /content/content/01/results/%05d.jpg -c:v libx264 -crf 23 -pix_fmt yuv420p -progress pipe:1 rk51x4.mp4 -y
+
 #sharpen
 ffmpeg -i /content/sp.mp4 -filter:v unsharp=5:5:1.0:5:5:0.0 -progress pipe:1 spb.mp4 -y
 
